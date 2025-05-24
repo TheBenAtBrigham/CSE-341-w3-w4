@@ -51,21 +51,22 @@ const updateProduct = async (req, res) =>
 {
     //#swagger.tags=['Products']
     try{
-
+        const {name, manufact, price, from, bulk, img, weight} = req.body;
         if (!ObjectId.isValid(req.params.id))
         {
             res.status(400).json('Error, not a valid product ID!')
         }
-        const productId = new ObjectId(req.params.id);
-        const product = {
-            name: req.body.name,
-            manufact: req.body.manufact,
-            price : req.body.price,
-            from : req.body.from,
-            bulk : req.body.bulk,
-            img : req.body.img,
-            weight : req.body.weight
+
+        if (!name || !manufact || !price || !from || !bulk || !img || !weight)
+        {
+            return res.status(400).json({message: "Fields are incomplete"});
         }
+
+        const productId = new ObjectId(req.params.id);
+        const product = {name, manufact, price, from, bulk, img, weight};
+        
+        
+        
 
         
         const response = await mongodb.getDatabase().db().collection('products').replaceOne({_id : productId}, product);

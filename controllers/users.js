@@ -54,17 +54,21 @@ const updateUser = async (req, res) =>
     //#swagger.tags=['Users']
     try{
 
+        const {fname, lname, email, bday} = req.body;
+
+        
+
         if (!ObjectId.isValid(req.params.id)) {
             return res.status(400).json({message: "Not valid"})
         }
 
-        const userId = new ObjectId(req.params.id);
-        const user = {
-            fname: req.body.fname,
-            lname: req.body.lname,
-            email : req.body.email,
-            bday: req.body.bday
+        if (!fname || !lname || !email || !bday) {
+            return res.status(400).json({message: "Fields are incomplete"})
         }
+
+        const userId = new ObjectId(req.params.id);
+        const user = {fname, lname, email, bday};
+        
         const response = await mongodb.getDatabase().db().collection('users').replaceOne({_id : userId}, user);
 
         if (response.modifiedCount > 0){
