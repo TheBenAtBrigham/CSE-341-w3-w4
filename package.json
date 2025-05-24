@@ -4,9 +4,29 @@
   "description": "Project for Weeks 3 and 4",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js",
     "start": "node server.js"
   },
   "author": "Asa Benson",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheBenAtBrigham/CSE-341-w3-w4.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheBenAtBrigham/CSE-341-w3-w4/issues"
+  },
+  "homepage": "https://github.com/TheBenAtBrigham/CSE-341-w3-w4#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.10.1",
+    "mongodb": "^6.16.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }

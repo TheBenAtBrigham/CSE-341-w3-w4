@@ -1,0 +1,51 @@
+### Get all users
+GET http://localhost:3000/users
+
+### Get contact by id
+GET http://localhost:3000/users/681d3c41cd48e7bc7656e475
+
+### Create contact
+POST http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+{
+    "fname": "Clony",
+    "lname": "Clone",
+    "email": "imnotaclone@gmail.com",
+    "bday": "4/3/1993"
+}
+
+### Put (update) contact
+PUT http://localhost:3000/users/681d3c41cd48e7bc7656e475 HTTP/1.1
+content-type: application/json
+
+{
+    "fname": "Clony",
+    "lname": "Clone",
+    "email": "imnotaclone@gmail.com",
+    "bday": "4/3/1993"
+}
+
+### Delete contact 
+DELETE http://localhost:3000/users/682527c8c643283048725738 HTTP/1.1
+
+
+### Get all products
+GET http://localhost:3000/products
+
+### Get product by id, plus Wine Gums are delicious...
+GET http://localhost:3000/products/682e4742ab95bc09b539dfbb
+
+POST http://localhost:3000/products HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Test Product",
+    "manufact": "REST",
+    "price": "$0.99",
+    "from" : "United States",
+    "bulk" : "yes",
+    "img" : "https://media.licdn.com/dms/image/v2/D4D12AQHeEaPG04vOQQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1710574308782?e=1753315200&v=beta&t=XB_7fO2YN-z4OdL7PFFMBMGDc6HJZcWOi1deBXkkzkw",
+    "weight" : "0oz"
+
+}
