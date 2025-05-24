@@ -7,7 +7,7 @@ const app = express();
 
 const mongodb = require('./data/database');
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 app.use(bodyParser.json());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
