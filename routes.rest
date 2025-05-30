@@ -2,10 +2,10 @@
 GET http://localhost:3000/users
 
 ### Get contact by id
-GET http://localhost:10000/users/681d3c41cd48e7bc7656e475
+GET http://localhost:3000/users/681d3c41cd48e7bc7656e475
 
 ### Create contact
-POST http://localhost:10000/users HTTP/1.1
+POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
@@ -49,3 +49,4 @@ content-type: application/json
     "weight" : "0oz"
 
 }
+
